@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+///
+/// Main app page, with background color randomly generated
+///
 class ColoredPage extends StatefulWidget {
-  const ColoredPage({Key? key}) : super(key: key);
+  const ColoredPage({super.key});
 
   @override
   _ColoredPageState createState() => _ColoredPageState();

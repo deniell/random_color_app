@@ -10,11 +10,10 @@ class RandomColorApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Random Color App',
       debugShowCheckedModeBanner: false,
-      home: const ColoredPage(),
+      home: ColoredPage(),
     );
   }
 }
-

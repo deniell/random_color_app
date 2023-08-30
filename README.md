@@ -1,14 +1,20 @@
-# flutter_project_template
-[![flutter_project_template](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_badge?projectName=flutter_project_template)](https://www.worklog.ai)
+# Random Color App
 
-📖 Template for flutter projects using solid_lints, CI for tests and analysis.
+Simple Flutter one page application. Created according to the task description given below. Randomly generate and change background color when user tap on screen.
 
-- Uses latest stable flutter
-- Repo name as your project name
-- Organization from your profile email address or default
+## Task description
+1. The application should: display the text "Hello there" in the middle of the screen and after tapping anywhere on the screen, a background color should be changed to a randomly generated color. You can also add any other feature to the app - that adds bonus points.
+2. Do not use any external libraries for color generation.
 
-# Usage
-1. Press "Use this template" on the menu.
-2. Fill Github form with your new repo name and press "Create repository from template"
-3. Wait for it to be created and set up action is complete. In a couple of minutes, you'll see the flutter project created in your repo once Github Actions are complete.
-4. Clone and code.
+## Technical requirements
+- Ready application that is working correctly (without bugs);
+- The code is clean, good naming (see Clean Code book by Robert C. Martin);
+- DRY, KISS principles applied;
+- You fully understand all code you written, how it works, why any parameter used, etc;
+- Finished task meets all requirements.
+
+#### Driven by
+Flutter 3.7.0-stable
+Dart 2.19.0
+
+The project created from the [template.](https://github.com/solid-software/flutter_project_template)
