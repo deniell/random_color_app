@@ -14,7 +14,6 @@ class _ColoredPageState extends State<ColoredPage> {
       body: Center(
         child: Text(
           'Hello there',
-          style: ,
         ),
       ),
     );
