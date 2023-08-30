@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:random_color_app/utils/utils.dart';
 
 ///
 /// Main app page, with background color randomly generated
@@ -37,7 +38,10 @@ class _ColoredPageState extends State<ColoredPage> {
           ),
         ),
         onTap: () {
-          print('Color have to be changed');
+          // get random color and update background color with it
+          setState(() {
+            backgroundColor = getRandomColor();
+          });
         },
       ),
     );
