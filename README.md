@@ -17,4 +17,8 @@ Simple Flutter one page application. Created according to the task description g
 Flutter 3.7.0-stable
 Dart 2.19.0
 
+## Tests
+Unit tests for random color generation.
+
+
 The project created from the [template.](https://github.com/solid-software/flutter_project_template)

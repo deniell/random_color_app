@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 ///
@@ -66,4 +68,11 @@ int bitsToInt(List<int> bits) {
   }
 
   return result;
+}
+
+///
+/// Function which help identify on which platform the app currently runs
+///
+bool isMobile() {
+  return Platform.isIOS || Platform.isAndroid;
 }
