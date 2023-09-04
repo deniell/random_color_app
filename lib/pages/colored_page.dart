@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:random_color_app/utils/dialogs.dart';
@@ -20,6 +23,10 @@ class _ColoredPageState extends State<ColoredPage> {
   Color previousColor = Colors.grey;
   // scale factor for text animation
   double scaleFactor = 1.0;
+  // reference to next color async operation, action which take place when
+  // use push on the screen to generate new random color.
+  // we keep this references in order to be able to cancel this operation/action
+  CancelableOperation<void>? nextColorOperation;
 
   @override
   Widget build(BuildContext context) {
@@ -65,13 +72,22 @@ class _ColoredPageState extends State<ColoredPage> {
           child: animatedText,
         ),
       ),
-      onTap: () {
-        // start text scale up
-        animateText();
-        // get random color and update background color with it
-        setState(() {
-          previousColor = backgroundColor;
-          backgroundColor = getRandomColor();
+      onTap: () async {
+        // check if previous operation is still active and cancel it, if it is
+        if (nextColorOperation != null) {
+          await nextColorOperation?.cancel();
+        }
+        // create new operation to get next random color
+        nextColorOperation = CancelableOperation.fromFuture(
+          getRandomColor(),
+        ).then((newColor) {
+          // start text scale up animation
+          animateText();
+          // update widget, when new color is generated
+          setState(() {
+            previousColor = backgroundColor;
+            backgroundColor = newColor;
+          });
         });
       },
     );

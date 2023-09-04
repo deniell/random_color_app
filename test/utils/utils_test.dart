@@ -20,25 +20,10 @@ void main() {
     return bits;
   }
 
-  group("getRandomBit()", () {
-    test('should return either 0 or 1', () {
-      final bit = getRandomBit();
-      expect(bit, isIn([0, 1]));
-    });
-
-    test('should return an integer value', () {
-      final bit = getRandomBit();
-      expect(bit, isA<int>());
-    });
-
-    test('from 4 randomly generated bits at leas one should be different', () {
-      final bit1 = getRandomBit();
-      final bit2 = getRandomBit();
-      final bit3 = getRandomBit();
-      final bit4 = getRandomBit();
-      print('bits: $bit1, $bit2, $bit3, $bit4');
-      expect((bit1 != bit2) | (bit1 != bit3) | (bit2 != bit3) | (bit1 != bit4) |
-        (bit2 != bit4) | (bit3 != bit4) , true,);
+  group("getRandomInt()", () {
+    test('returns an integer', () async {
+      final randomInt = await getRandomInt();
+      expect(randomInt, isA<int>());
     });
   });
 
@@ -83,26 +68,26 @@ void main() {
   });
 
   group("getRandom8BitNumber()", () {
-    test('returns value within range', () {
-      final randomValue = getRandom8BitNumber();
+    test('returns value within range', () async {
+      final randomValue = await getRandom8BitNumber();
       expect(randomValue, isA<int>());
       expect(randomValue, greaterThanOrEqualTo(0));
       expect(randomValue, lessThanOrEqualTo(255));
     });
 
-    test('returns an integer', () {
-      final randomValue = getRandom8BitNumber();
+    test('returns an integer', () async {
+      final randomValue = await getRandom8BitNumber();
       expect(randomValue, isA<int>());
     });
 
-    test('generates 8 random bits', () {
-      final randomValue = getRandom8BitNumber();
+    test('generates 8 random bits', () async {
+      final randomValue = await getRandom8BitNumber();
       final bitsList = intToBits(randomValue);
       expect(bitsList.length, equals(8));
     });
 
-    test('generates valid bits', () {
-      final randomValue = getRandom8BitNumber();
+    test('generates valid bits', () async {
+      final randomValue = await getRandom8BitNumber();
       final bitsList = intToBits(randomValue);
       for (final bit in bitsList) {
         expect(bit, isIn([0, 1]));
@@ -111,9 +96,9 @@ void main() {
   });
 
   group("getRandomColor()", () {
-    test('Test color generation', () {
+    test('Test color generation', () async {
       // Call the getRandomColor() function
-      final color = getRandomColor();
+      final color = await getRandomColor();
       // Verify that the returned color is not null
       expect(color, isNotNull);
       // Verify that the red, green, and blue components are between 0 and 255
