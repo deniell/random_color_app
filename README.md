@@ -18,7 +18,7 @@ Flutter 3.7.0-stable
 Dart 2.19.0
 
 ## Works on nex platforms:
-Android, Linux, Web.
+Android, Linux, Web, iOS, macOS.
 
 ## Tests
 Unit tests for random color generation.
